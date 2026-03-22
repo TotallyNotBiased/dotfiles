@@ -1,6 +1,18 @@
 { config, pkgs, ... }:
 
 {
+  home.shellAliases = {
+    mkflake = ''
+      f() {
+        if [ -z "$1" ]; then
+          echo "Usage: mkflake <template>"
+          return 1 
+        fi
+        nix flake init -t ~/dotfiles#"$1" && \
+        echo "use flake" > .envrc && \
+        direnv allow
+      }; f'';
+  };
   programs.bash = {
     enable = true;
   };
