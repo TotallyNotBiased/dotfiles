@@ -78,7 +78,7 @@
               users.unbiased = {
                 imports = [
                   ./hosts/thinkpad/home.nix
-                  nixvim.homeManagerModules.nixvim
+                  nixvim.homeModules.nixvim
                   ./modules/home/nixvim
                 ];
               };
@@ -93,7 +93,7 @@
         extraSpecialArgs = { inherit inputs; unstable = unstableLinux; };
         modules = [
           ./hosts/wsl/home.nix
-          nixvim.homeManagerModules.nixvim
+          nixvim.homeModules.nixvim
           ./modules/home/nixvim
         ];
       };
@@ -113,7 +113,7 @@
               users.unbiased = {
                 imports = [
                   ./hosts/macbook/home.nix
-                  nixvim.homeManagerModules.nixvim
+                  nixvim.homeModules.nixvim
                   ./modules/home/nixvim
                 ];
               };
