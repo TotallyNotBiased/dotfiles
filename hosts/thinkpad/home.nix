@@ -24,7 +24,6 @@
 
         bitwig-studio
 
-        kitty
         qalculate-gtk
         wl-clipboard
         cliphist
@@ -66,6 +65,16 @@
     templates = "${config.home.homeDirectory}";
     videos = "${config.home.homeDirectory}";
   };
+
+  programs.kitty = {
+    enable = true;
+    themeFile = "Catppuccin-Mocha";
+    settings = {
+      confirm_os_window_close = 0;
+      background_opacity = "0.6";
+    };
+  };
+
   programs.bash = {
     enable = true;
     shellAliases = {
