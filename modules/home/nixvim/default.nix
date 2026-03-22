@@ -17,6 +17,7 @@
 
       colorschemes.catppuccin.enable = true;
       web-devicons.enable = true;
+      version.enableNixpkgsReleaseCheck = false;
   };
 }
 
