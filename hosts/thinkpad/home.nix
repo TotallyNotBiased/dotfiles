@@ -24,6 +24,7 @@
 
         bitwig-studio
 
+        kitty
         qalculate-gtk
         wl-clipboard
         cliphist
