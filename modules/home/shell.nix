@@ -99,6 +99,7 @@
 
     extraConfig = ''
       set -g default-terminal "tmux-256color"
+      set -g status-left-length 30
       set -ag terminal-overrides ",xterm-256color:RGB"
 
       bind v split-window -h -c "#{pane_current_path}"
