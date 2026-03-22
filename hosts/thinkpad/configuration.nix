@@ -62,7 +62,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    vi
+    vim
     uutils-coreutils
     xwayland-satellite
     brightnessctl
