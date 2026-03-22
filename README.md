@@ -18,12 +18,12 @@ Note that if you are trying this out on your own machine, use your own `hardware
 
 ### MacBook (nix-darwin) 
 ```bash
-sudo nixos-rebuild switch --flake ~/dotfiles#macbook
+darwin-rebuild switch --flake ~/dotfiles#macbook
 ```
 
 ### WSL (home-manager) 
 ```bash
-sudo nixos-rebuild switch --flake ~/dotfiles#unbiased
+home-manager switch --flake ~/dotfiles#unbiased
 ```
 
 ## Usage
