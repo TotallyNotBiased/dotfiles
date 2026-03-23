@@ -7,7 +7,7 @@
 }:
 
 {
-  theme.name = "gruvvy-melon";
+  theme.name = "one-dark-pro";
 
   imports = [
     ../../modules/home/core.nix

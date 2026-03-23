@@ -32,18 +32,18 @@
 
       directory = {
         style = "bg:${config.theme.colors.base01} fg:${config.theme.colors.base05}";
-        format = "[ $path ]($style)[](bg:${config.theme.colors.base02} fg:${config.theme.colors.base01})";
+        format = "[ $path ]($style)[](fg:${config.theme.colors.base01}) ";
       };
 
       git_branch = {
         symbol = "";
-        style = "bg:${config.theme.colors.base02}";
-        format = "[[ $symbol $branch ](fg:${config.theme.colors.magenta} bg:${config.theme.colors.base02})]($style)";
+        style = "fg:${config.theme.colors.magenta}";
+        format = "[ $symbol $branch ]($style)";
       };
 
       git_status = {
-        style = "bg:${config.theme.colors.base02}";
-        format = "[[($all_status$ahead_behind )](fg:${config.theme.colors.magenta} bg:${config.theme.colors.base02})]($style)[](fg:${config.theme.colors.base02}) ";
+        style = "fg:${config.theme.colors.magenta}";
+        format = "[($all_status$ahead_behind )]($style) ";
       };
 
       nix_shell = {

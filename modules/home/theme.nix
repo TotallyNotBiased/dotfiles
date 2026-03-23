@@ -58,6 +58,25 @@ let
       magenta = "#ffb8ec";
       violet  = "#9781d5";
     };
+
+    "one-dark-pro" = {
+      base00 = "#282c34";
+      base01 = "#353b45";
+      base02 = "#3e4451";
+      base03 = "#545862";
+      base04 = "#565c64";
+      base05 = "#abb2bf";
+      base06 = "#b6bdca";
+      base07 = "#c8ccd4";
+      red     = "#e06c75";
+      orange  = "#d19a66";
+      yellow  = "#e5c07b";
+      green   = "#98c379";
+      cyan    = "#56b6c2";
+      blue    = "#61afef";
+      magenta = "#c678dd";
+      violet  = "#be5046";
+    };
   };
 in
 {
