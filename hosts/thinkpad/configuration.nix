@@ -55,6 +55,7 @@
 
   users.users.unbiased = {
     isNormalUser = true;
+    description = "unbiased";
     extraGroups = [
       "wheel"
       "networkmanager"
