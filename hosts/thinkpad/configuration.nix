@@ -16,7 +16,7 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
-    theme = "sddm-astronaut-theme";
+    theme = "chili";
   };
 
   networking.hostName = "nixos";
@@ -72,12 +72,11 @@
     xwayland-satellite
     brightnessctl
 
-    (sddm-astronaut.override {
+    (sddm-chili-theme.override {
       themeConfig = {
-        Background = "${../../assets/wallpaper.jpg}"; 
+        background = "${../../assets/wallpaper.jpg}"; 
       };
     })
-    kdePackages.qtmultimedia
   ];
 
   nixpkgs.config.allowUnfree = true;
