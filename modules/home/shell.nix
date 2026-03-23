@@ -13,8 +13,39 @@
         direnv allow
       }; f'';
   };
+  
   programs.bash = {
     enable = true;
+    initExtra = ''
+      function y() {
+        local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+        yazi "$@" --cwd-file="$tmp"
+        if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+          builtin cd -- "$cwd"
+        fi
+        rm -f -- "$tmp"
+      }
+    '';
+  };
+
+  programs.yazi = {
+    enable = true;
+    enableBashIntegration = true;
+    theme = {
+      manager = {
+        cwd = { fg = config.theme.colors.cyan; };
+        hovered = { fg = config.theme.colors.base00; bg = config.theme.colors.blue; };
+        tab_active = { fg = config.theme.colors.base00; bg = config.theme.colors.blue; };
+        tab_inactive = { fg = config.theme.colors.base05; bg = config.theme.colors.base01; };
+        border_style = { fg = config.theme.colors.base03; };
+      };
+      status = {
+        separator_style = { fg = config.theme.colors.base01; bg = config.theme.colors.base01; };
+        mode_normal = { fg = config.theme.colors.base00; bg = config.theme.colors.blue; bold = true; };
+        mode_select = { fg = config.theme.colors.base00; bg = config.theme.colors.green; bold = true; };
+        mode_unset = { fg = config.theme.colors.base00; bg = config.theme.colors.magenta; bold = true; };
+      };
+    };
   };
 
   programs.starship = {
