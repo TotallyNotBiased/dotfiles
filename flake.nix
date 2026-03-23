@@ -63,7 +63,7 @@
       };
     in
     {
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.thinkpad = nixpkgs.lib.nixosSystem {
         system = linuxSystem;
         specialArgs = { inherit inputs; unstable = unstableLinux; };
         modules = [
@@ -79,8 +79,6 @@
               users.unbiased = {
                 imports = [
                   ./hosts/thinkpad/home.nix
-                  nixvim.homeModules.nixvim
-                  ./modules/home/nixvim
                 ];
               };
             };
@@ -94,8 +92,6 @@
         extraSpecialArgs = { inherit inputs; unstable = unstableLinux; };
         modules = [
           ./hosts/wsl/home.nix
-          nixvim.homeModules.nixvim
-          ./modules/home/nixvim
         ];
       };
 
@@ -114,8 +110,6 @@
               users.unbiased = {
                 imports = [
                   ./hosts/macbook/home.nix
-                  nixvim.homeModules.nixvim
-                  ./modules/home/nixvim
                 ];
               };
             };

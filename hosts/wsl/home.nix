@@ -1,9 +1,11 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, unstable, ... }:
 
 {
   imports = [
     ../../modules/home/core.nix
     ../../modules/home/shell.nix
+    inputs.nixvim.homeModules.nixvim
+    ../../modules/home/nixvim
   ];
 
   home.file = {

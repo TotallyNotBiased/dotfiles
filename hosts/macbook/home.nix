@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, unstable, ... }:
 
 {
   imports = [
@@ -6,6 +6,8 @@
     ../../modules/home/shell.nix
     ../../modules/home/firefox.nix
     ../../modules/home/fonts.nix
+    inputs.nixvim.homeModules.nixvim
+    ../../modules/home/nixvim
   ];
 
   home.shellAliases = {

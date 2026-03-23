@@ -14,7 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos";
+  networking.hostName = "thinkpad";
   networking.networkmanager.enable = true;
 
   time.timeZone = "Australia/Melbourne";
@@ -56,14 +56,9 @@
       "networkmanager"
       "dialout"
     ];
-    packages = with pkgs; [
-      tree
-    ];
   };
 
   environment.systemPackages = with pkgs; [
-    vim
-    uutils-coreutils
     xwayland-satellite
     brightnessctl
   ];

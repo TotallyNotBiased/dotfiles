@@ -6,7 +6,6 @@
   ];
 
   home.username = "unbiased";
-  home.homeDirectory = "/home/unbiased";
   home.stateVersion = "25.11";
 
   home.packages = (with pkgs; [

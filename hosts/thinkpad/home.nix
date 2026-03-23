@@ -14,11 +14,13 @@
     ../../modules/home/shell.nix
     ../../modules/home/firefox.nix
     ../../modules/home/fonts.nix
+    inputs.nixvim.homeModules.nixvim
+    ../../modules/home/nixvim
   ];
 
   home = {
     pointerCursor = {
-      name = "Bibata-Modern-Classic";
+      name = "Bibata-Modern-Ice";
       package = pkgs.bibata-cursors;
       size = 24;
       gtk.enable = true;
@@ -39,6 +41,8 @@
         cliphist
         glib
         gsettings-desktop-schemas
+        tree
+        uutils-coreutils
       ])
       ++ (with unstable; [
         antigravity
@@ -104,12 +108,9 @@
     };
   };
 
-  programs.bash = {
-    enable = true;
-    shellAliases = {
-      rebuild = "sudo nixos-rebuild switch --flake ~/dotfiles#nixos";
-      conf = "cd ~/dotfiles";
-    };
+  home.shellAliases = {
+    rebuild = "sudo nixos-rebuild switch --flake ~/dotfiles#thinkpad";
+    conf = "cd ~/dotfiles";
   };
 
   xdg.configFile."niri/config.kdl".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/niri/config.kdl";
