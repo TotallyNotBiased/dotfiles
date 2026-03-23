@@ -16,6 +16,7 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
+    theme = "sddm-astronaut-theme";
   };
 
   networking.hostName = "nixos";
@@ -69,6 +70,14 @@
     uutils-coreutils
     xwayland-satellite
     brightnessctl
+
+    (sddm-astronaut.override {
+      themeConfig = {
+        # SDDM runs securely as the 'sddm' user, meaning it fundamentally cannot read /home/unbiased/
+        # To fix this, simply copy your exact wallpaper to this shared system directory!
+        Background = "/var/lib/sddm/wallpaper"; 
+      };
+    })
   ];
 
   nixpkgs.config.allowUnfree = true;
