@@ -77,6 +77,7 @@
         Background = "${../../assets/wallpaper.jpg}"; 
       };
     })
+    kdePackages.qtmultimedia
   ];
 
   nixpkgs.config.allowUnfree = true;
