@@ -2,6 +2,7 @@
 
 {
   options.theme = {
+    # Gotham Base16 colour scheme: https://github.com/whatyouhide/vim-gotham.git
     colors = {
       base00 = lib.mkOption { type = lib.types.str; default = "#0c1014"; };
       base01 = lib.mkOption { type = lib.types.str; default = "#11151c"; };

@@ -25,31 +25,31 @@
 
       username = {
         show_always = true;
-        style_user = "bg:#cba6f7 fg:#1e1e2e";
-        style_root = "bg:#f38ba8 fg:#1e1e2e";
-        format = "[ $user ]($style)[](bg:#313244 fg:#cba6f7)";
+        style_user = "bg:${config.theme.colors.magenta} fg:${config.theme.colors.base00}";
+        style_root = "bg:${config.theme.colors.red} fg:${config.theme.colors.base00}";
+        format = "[ $user ]($style)[](bg:${config.theme.colors.base01} fg:${config.theme.colors.magenta})";
       };
 
       directory = {
-        style = "bg:#313244 fg:#cdd6f4";
-        format = "[ $path ]($style)[](fg:#313244) ";
+        style = "bg:${config.theme.colors.base01} fg:${config.theme.colors.base05}";
+        format = "[ $path ]($style)[](fg:${config.theme.colors.base01}) ";
       };
 
       git_branch = {
         symbol = "";
-        style = "bg:#313244";
-        format = "[[ $symbol $branch ](fg:#cba6f7 bg:#313244)]($style)";
+        style = "bg:${config.theme.colors.base01}";
+        format = "[[ $symbol $branch ](fg:${config.theme.colors.magenta} bg:${config.theme.colors.base01})]($style)";
       };
 
       git_status = {
-        style = "bg:#313244";
-        format = "[[($all_status$ahead_behind )](fg:#cba6f7 bg:#313244)]($style)";
+        style = "bg:${config.theme.colors.base01}";
+        format = "[[($all_status$ahead_behind )](fg:${config.theme.colors.magenta} bg:${config.theme.colors.base01})]($style)";
       };
 
       nix_shell = {
         disabled = false;
         symbol = "";
-        style = "bg:#89b4fa fg:#1e1e2e";
+        style = "bg:${config.theme.colors.blue} fg:${config.theme.colors.base00}";
         format = "[ $symbol $name ]($style) ";
       };
 
@@ -78,12 +78,6 @@
     plugins = with pkgs.tmuxPlugins; [
       vim-tmux-navigator
       {
-        plugin = catppuccin;
-        extraConfig = ''
-          set -g @catppuccin_flavour 'mocha'
-        '';
-      }
-      {
         plugin = resurrect;
         extraConfig = ''
           set -g @resurrect-capture-pane-contents 'on'
@@ -101,6 +95,19 @@
       set -g default-terminal "tmux-256color"
       set -g status-left-length 30
       set -ag terminal-overrides ",xterm-256color:RGB"
+
+      set -g status-position top
+      set -g status-style "bg=${config.theme.colors.base00},fg=${config.theme.colors.base05}"
+      set -g window-status-current-style "bg=${config.theme.colors.magenta},fg=${config.theme.colors.base00},bold"
+      set -g window-status-style "bg=${config.theme.colors.base01},fg=${config.theme.colors.base05}"
+      set -g pane-border-style "fg=${config.theme.colors.base01}"
+      set -g pane-active-border-style "fg=${config.theme.colors.magenta}"
+      set -g message-style "bg=${config.theme.colors.magenta},fg=${config.theme.colors.base00}"
+      
+      set -g status-left "#[bg=${config.theme.colors.blue},fg=${config.theme.colors.base00},bold] #S "
+      set -g status-right "#[bg=${config.theme.colors.base01},fg=${config.theme.colors.base05}] %H:%M "
+      set -g window-status-format " #I:#W "
+      set -g window-status-current-format " #I:#W "
 
       bind v split-window -h -c "#{pane_current_path}"
       bind s split-window -v -c "#{pane_current_path}"
