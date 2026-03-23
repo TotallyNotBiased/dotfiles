@@ -73,9 +73,7 @@
 
     (sddm-astronaut.override {
       themeConfig = {
-        # SDDM runs securely as the 'sddm' user, meaning it fundamentally cannot read /home/unbiased/
-        # To fix this, simply copy your exact wallpaper to this shared system directory!
-        Background = "/var/lib/sddm/wallpaper"; 
+        Background = "${../../assets/wallpaper.jpg}"; 
       };
     })
   ];
