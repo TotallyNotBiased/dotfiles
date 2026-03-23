@@ -13,7 +13,7 @@
         direnv allow
       }; f'';
   };
-  
+
   programs.bash = {
     enable = true;
     initExtra = ''
@@ -33,6 +33,7 @@
     enableBashIntegration = true;
     theme = {
       mgr = {
+        ratio = [ 2 4 3 ];
         cwd = { fg = config.theme.colors.cyan; };
         hovered = { fg = config.theme.colors.base00; bg = config.theme.colors.blue; };
         tab_active = { fg = config.theme.colors.base00; bg = config.theme.colors.blue; };
