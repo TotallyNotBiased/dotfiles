@@ -3,7 +3,7 @@
     ./lsp.nix
     ./cmp.nix
     ./neo-tree.nix
-    ./toggleterm.nix
+    ./colorizer.nix
   ];
 
   programs.nixvim.plugins = {
