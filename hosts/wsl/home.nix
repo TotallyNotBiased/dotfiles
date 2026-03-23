@@ -8,7 +8,7 @@
     ../../modules/home/nixvim
   ];
 
-  theme.name = "one-dark-pro";
+  theme.name = "gruvvy-melon";
 
   home.file = {
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
