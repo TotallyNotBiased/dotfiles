@@ -77,12 +77,6 @@
     uutils-coreutils
     xwayland-satellite
     brightnessctl
-
-    (sddm-astronaut-theme.override {
-      themeConfig = {
-        background = "${../../assets/wallpaper.jpg}"; 
-      };
-    })
   ];
 
   nixpkgs.config.allowUnfree = true;
