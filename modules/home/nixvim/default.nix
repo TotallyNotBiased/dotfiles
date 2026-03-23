@@ -36,7 +36,6 @@
           base0F = "${config.theme.colors.violet}";
         };
       };
-      web-devicons.enable = true;
       version.enableNixpkgsReleaseCheck = false;
   };
 }
