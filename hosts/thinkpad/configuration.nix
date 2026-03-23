@@ -13,7 +13,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  services.getty.autologinUser = "unbiased";
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
@@ -53,7 +56,7 @@
     isNormalUser = true;
     extraGroups = [
       "wheel"
-      "networkManager"
+      "networkmanager"
       "dialout"
     ];
     packages = with pkgs; [
@@ -69,6 +72,8 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
+  security.polkit.enable = true;
+
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
