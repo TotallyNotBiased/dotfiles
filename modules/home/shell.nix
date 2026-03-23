@@ -96,7 +96,7 @@
       set -g status-left-length 30
       set -ag terminal-overrides ",xterm-256color:RGB"
 
-      set -g status-position top
+      set -g status-position bottom
       set -g status-style "bg=${config.theme.colors.base00},fg=${config.theme.colors.base05}"
       set -g window-status-current-style "bg=${config.theme.colors.magenta},fg=${config.theme.colors.base00},bold"
       set -g window-status-style "bg=${config.theme.colors.base01},fg=${config.theme.colors.base05}"
