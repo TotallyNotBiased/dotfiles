@@ -32,7 +32,7 @@
     enable = true;
     enableBashIntegration = true;
     theme = {
-      manager = {
+      mgr = {
         cwd = { fg = config.theme.colors.cyan; };
         hovered = { fg = config.theme.colors.base00; bg = config.theme.colors.blue; };
         tab_active = { fg = config.theme.colors.base00; bg = config.theme.colors.blue; };
