@@ -83,7 +83,8 @@
     enable = true;
     settings = {
       confirm_os_window_close = 0;
-      background_opacity = "0.90";
+      background_opacity = "0.69";
+      background_blur = 1;
       foreground = config.theme.colors.base05;
       background = config.theme.colors.base00;
       selection_background = config.theme.colors.base02;
