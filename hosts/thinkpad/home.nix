@@ -7,7 +7,7 @@
 }:
 
 {
-  theme.name = "gotham";
+  theme.name = "gruvvy-melon";
 
   imports = [
     ../../modules/home/core.nix
@@ -87,7 +87,7 @@
       foreground = config.theme.colors.base05;
       background = config.theme.colors.base00;
       selection_background = config.theme.colors.base02;
-      selection_foreground = config.theme.colors.base05;
+      selection_foreground = config.theme.colors.base00;
       cursor = config.theme.colors.base05;
       color0 = config.theme.colors.base01;
       color8 = config.theme.colors.base03;

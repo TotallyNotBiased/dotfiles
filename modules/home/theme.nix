@@ -39,6 +39,25 @@ let
       magenta = "#ff79c6";
       violet  = "#bd93f9";
     };
+
+    "gruvvy-melon" = {
+      base00 = "#273030";
+      base01 = "#415550";
+      base02 = "#4f6a63";
+      base03 = "#689589";
+      base04 = "#8eb5aa";
+      base05 = "#e9f2f1";
+      base06 = "#b6d2ca";
+      base07 = "#c3adff";
+      red     = "#ff647d";
+      orange  = "#eea48d";
+      yellow  = "#f1bcac";
+      green   = "#80e5b3";
+      cyan    = "#a1ede0";
+      blue    = "#71ccbf";
+      magenta = "#ffb8ec";
+      violet  = "#9781d5";
+    };
   };
 in
 {
