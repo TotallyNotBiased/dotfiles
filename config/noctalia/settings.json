@@ -548,7 +548,7 @@
     },
     "wallpaper": {
         "automationEnabled": false,
-        "directory": "/home/unbiased/img/wallpaper/",
+        "directory": "/home/unbiased/dotfiles/assets/",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "favorites": [
@@ -557,6 +557,11 @@
         "fillMode": "crop",
         "hideWallpaperFilenames": false,
         "monitorDirectories": [
+            {
+                "directory": "/home/unbiased/dotfiles/assets/",
+                "name": "eDP-1",
+                "wallpaper": ""
+            }
         ],
         "overviewBlur": 0.4,
         "overviewEnabled": false,
