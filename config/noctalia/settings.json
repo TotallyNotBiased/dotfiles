@@ -1,0 +1,36 @@
+{
+  "general": {
+    "avatarImage": "/home/unbiased/.face",
+    "radiusRatio": 0.2
+  },
+  "bar": {
+    "density": "compact",
+    "position": "top",
+    "showCapsule": false,
+    "widgets": {
+      "left": [
+        { "id": "ControlCenter", "useDistroLogo": true },
+        { "id": "WiFi" },
+        { "id": "Bluetooth" }
+      ],
+      "center": [
+        { "hideUnoccupied": false, "id": "Workspace", "labelMode": "none" }
+      ],
+      "right": [
+        { "alwaysShowPercentage": false, "id": "Battery", "warningThreshold": 30 },
+        { "id": "Clock", "formatHorizontal": "HH:mm", "formatVertical": "HH mm", "useMonospacedFont": true, "usePrimaryColor": true }
+      ]
+    }
+  },
+  "location": {
+    "name": "Melbourne, Australia",
+    "monthBeforeDay": false
+  },
+  "wallpaper": {
+    "enabled": true,
+    "directory": "/home/unbiased/img/wallpaper/"
+  },
+  "colorSchemes": {
+    "predefinedScheme": "Monochrome"
+  }
+}
