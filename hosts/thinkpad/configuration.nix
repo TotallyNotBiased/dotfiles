@@ -16,7 +16,13 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
-    theme = "chili";
+    package = pkgs.kdePackages.sddm;
+    extraPackages = with pkgs; [
+      kdePackages.qtsvg
+      kdePackages.qtmultimedia
+      kdePackages.qtvirtualkeyboard
+    ];
+    theme = "sddm-astronaut-theme";
   };
 
   networking.hostName = "nixos";
@@ -72,7 +78,7 @@
     xwayland-satellite
     brightnessctl
 
-    (sddm-chili-theme.override {
+    (sddm-astronaut-theme.override {
       themeConfig = {
         background = "${../../assets/wallpaper.jpg}"; 
       };
