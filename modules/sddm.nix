@@ -2,7 +2,10 @@
 
 let
   custom-sddm-astronaut = pkgs.sddm-astronaut.override {
-    embeddedTheme = "black_hole";
+    embeddedTheme = "astronaut";
+    themeConfig = {
+      Background = "${./../assets/wallpaper.jpg}";
+    };
   };
 
 in {
@@ -11,7 +14,6 @@ in {
     wayland = {
       enable = true;
     };
-    autoNumlock = true;
     enableHidpi = true;
     theme = "sddm-astronaut-theme";
     settings = {

@@ -7,6 +7,8 @@
 }:
 
 {
+  theme.name = "gotham";
+
   imports = [
     ../../modules/home/core.nix
     ../../modules/home/shell.nix
@@ -77,7 +79,7 @@
     enable = true;
     settings = {
       confirm_os_window_close = 0;
-      background_opacity = "0.8";
+      background_opacity = "0.90";
       foreground = config.theme.colors.base05;
       background = config.theme.colors.base00;
       selection_background = config.theme.colors.base02;
