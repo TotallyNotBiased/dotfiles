@@ -4,15 +4,15 @@
   programs.nixvim.keymaps = [
       # General keymaps
       {
-		mode = "t";
-		key = "<Esc>";
-		action = "<C-\\><C-n>";
-		options.desc = "Exit terminal mode to Normal mode";
+		key = "<C-CR>";
+		action = "i<CR><Esc>";
+		options.desc = "Break line at cursor position in Normal mode";
       }
       {
       mode = "n";
 		key = "<C-s>";
 		action = "<cmd>w<CR>";
+                options.desc = "Save while in Normal mode";
       }
       # LSP keymaps
       {
@@ -25,11 +25,6 @@
 		key = "<leader>e";
 		action = "<cmd>Neotree toggle<CR>";
 		options.desc = "Toggle Explorer";
-      }
-      {
-		key = "<leader>t";
-		action = "<cmd>ToggleTerm<CR>";
-		options.desc = "Toggle Terminal";
       }
       {
 		key = "<leader>ff";
