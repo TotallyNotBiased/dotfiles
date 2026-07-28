@@ -5,10 +5,11 @@
       inputs.noctalia.homeModules.default
     ];
 
-    programs.noctalia-shell = {
+    programs.noctalia = {
       enable = true;
+      validateConfig = false;
     };
 
-    xdg.configFile."noctalia/settings.json".source = config.lib.file.mkOutOfStoreSymlink "/home/unbiased/dotfiles/config/noctalia/settings.json";
+    xdg.configFile."noctalia/config.toml".source = config.lib.file.mkOutOfStoreSymlink "/home/unbiased/dotfiles/config/noctalia/config.toml";
   };
 }

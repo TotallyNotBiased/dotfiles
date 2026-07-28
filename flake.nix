@@ -12,15 +12,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    noctalia-qs = {
-      url = "github:noctalia-dev/noctalia-qs";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
+      url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
-      inputs.noctalia-qs.follows = "noctalia-qs";
     };
 
     nixvim = {

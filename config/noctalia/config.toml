@@ -1,0 +1,176 @@
+# Noctalia v5 config — ported from v4 settings.json (best effort)
+# See https://docs.noctalia.dev/v5/ and example.toml for full reference.
+# Options not mappable from v4 are left at defaults or commented with notes.
+
+# ── Shell ─────────────────────────────────────────────────────────────────────
+[shell]
+ui_scale              = 1.0
+corner_radius_scale   = 0.2          # v4: radiusRatio = 0.2
+font_family           = "sans-serif" # v4: fontDefault = "Sans Serif"
+telemetry_enabled     = false        # v4: telemetryEnabled = false
+settings_show_advanced = false
+clipboard_enabled     = false        # v4: enableClipboardHistory = false
+password_style        = "default"    # v4: passwordChars = false
+
+# v4 avatar: /home/unbiased/.face
+avatar_path           = "/home/unbiased/.face"
+
+[shell.animation]
+enabled = true                       # v4: animationDisabled = false
+speed   = 1.0                        # v4: animationSpeed = 1
+
+[shell.shadow]
+direction = "down_right"             # v4: shadowDirection = "bottom_right"
+alpha     = 0.55
+
+[shell.panel]
+transparency_mode     = "solid"      # v4: panelBackgroundOpacity = 0.93 → close to solid
+borders               = false        # v4: boxBorderEnabled = false
+launcher_placement    = "centered"   # v4: appLauncher.position = "center"
+session_placement     = "centered"   # v4: sessionMenu.position = "center"
+control_center_placement = "attached" # v4: controlCenter.position = "close_to_bar_button"
+
+[shell.mpris]
+blacklist = []                       # v4: mprisBlacklist = []
+
+# ── Wallpaper ─────────────────────────────────────────────────────────────────
+[wallpaper]
+enabled             = true
+fill_mode           = "crop"         # v4: fillMode = "crop"
+fill_color          = "#000000"      # v4: fillColor = "#000000"
+transition          = ["fade", "disc", "stripes", "wipe", "honeycomb"]  # v4: transitionType
+transition_duration = 1500           # v4: transitionDuration = 1500
+edge_smoothness     = 0.05           # v4: transitionEdgeSmoothness = 0.05
+transition_on_startup = true         # v4: skipStartupTransition = false → animate on startup
+directory           = "/home/unbiased/dotfiles/assets/"  # v4: directory
+
+[wallpaper.automation]
+enabled          = false             # v4: automationEnabled = false
+interval_minutes = 5                 # v4: randomIntervalSec = 300 → 5 minutes
+order            = "random"          # v4: wallpaperChangeMode = "random"
+
+# ── Theme ─────────────────────────────────────────────────────────────────────
+[theme]
+mode    = "dark"                     # v4: colorSchemes.darkMode = true
+source  = "builtin"                  # v4: useWallpaperColors = false → builtin
+builtin = "Tokyo-Night"             # v4: predefinedScheme = "Tokyo Night"
+
+# ── Backdrop ──────────────────────────────────────────────────────────────────
+[backdrop]
+enabled        = false               # v4: wallpaper.overviewEnabled = false
+blur_intensity = 0.4                 # v4: overviewBlur = 0.4
+tint_intensity = 0.6                 # v4: overviewTint = 0.6
+
+# ── Notifications ─────────────────────────────────────────────────────────────
+[notification]
+enable_daemon      = true            # v4: notifications.enabled = true
+layer              = "overlay"       # v4: overlayLayer = true
+background_opacity = 1.0             # v4: notifications.backgroundOpacity = 1
+
+# ── OSD ───────────────────────────────────────────────────────────────────────
+[osd]
+position           = "top_right"     # v4: osd.location = "top_right"
+background_opacity = 1.0             # v4: osd.backgroundOpacity = 1
+
+[osd.kinds]
+volume     = true
+brightness = true
+lock_keys  = true                    # v4: osd.enabledTypes included keyboard
+
+# ── Lock Screen ───────────────────────────────────────────────────────────────
+[lockscreen]
+enabled = true
+
+# ── System Monitor ────────────────────────────────────────────────────────────
+[system.monitor]
+enabled = true
+
+# ── Weather ───────────────────────────────────────────────────────────────────
+[weather]
+enabled = true                       # v4: weatherEnabled = true
+unit    = "celsius"                  # v4: useFahrenheit = false
+effects = true                       # v4: weatherShowEffects = true
+
+# ── Audio ─────────────────────────────────────────────────────────────────────
+[audio]
+enable_overdrive = false             # v4: volumeOverdrive = false
+enable_sounds    = false             # v4: notifications.sounds.enabled = false
+sound_volume     = 0.5               # v4: notifications.sounds.volume = 0.5
+
+# ── Brightness ────────────────────────────────────────────────────────────────
+[brightness]
+enable_ddcutil = false               # v4: enableDdcSupport = false
+
+# ── Night Light ───────────────────────────────────────────────────────────────
+[nightlight]
+enabled          = false             # v4: nightLight.enabled = false
+force            = false             # v4: nightLight.forced = false
+temperature_day  = 6500              # v4: dayTemp = "6500"
+temperature_night = 4000             # v4: nightTemp = "4000"
+
+# ── Location ──────────────────────────────────────────────────────────────────
+[location]
+auto_locate = false
+address     = "Melbourne, Australia" # v4: location.name = "Melbourne, Australia"
+
+# ── Idle ──────────────────────────────────────────────────────────────────────
+[idle.behavior.lock]
+timeout = 300                        # v4: idle.lockTimeout = 300
+command = "noctalia:session lock"
+enabled = true                       # v4: idle.enabled = true
+
+[idle.behavior.screen-off]
+timeout = 360                        # v4: idle.screenOffTimeout = 360
+command = "noctalia:dpms-off"
+resume_command = "noctalia:dpms-on"
+enabled = true
+
+# ── Keybinds ──────────────────────────────────────────────────────────────────
+[keybinds]
+validate = ["return", "kp_enter"]    # v4: keyEnter = ["Return", "Enter"]
+cancel   = ["escape"]               # v4: keyEscape = ["Esc"]
+left     = ["left"]                  # v4: keyLeft = ["Left"]
+right    = ["right"]                 # v4: keyRight = ["Right"]
+up       = ["up"]                    # v4: keyUp = ["Up"]
+down     = ["down"]                  # v4: keyDown = ["Down"]
+
+# ── Bar ───────────────────────────────────────────────────────────────────────
+[bar.main]
+position           = "top"           # v4: bar.position = "top"
+background_opacity = 1.0             # v4: bar.backgroundOpacity = 1
+radius             = 12              # v4: bar.frameRadius = 12
+margin_h           = 4               # v4: marginHorizontal = 4
+margin_v           = 4               # v4: marginVertical = 4
+widget_spacing     = 4               # v4: widgetSpacing = 4
+scale              = 1.0             # v4: fontScale = 1
+shadow             = true            # v4: enableShadows = true
+auto_hide          = false           # v4: displayMode = "always_visible"
+reserve_space      = true            # v4: enableExclusionZoneInset = true
+capsule            = false           # v4: showCapsule = false
+
+# v4 widget layout mapping (best effort):
+#   left:   ControlCenter, Network, Bluetooth
+#   center: Workspace
+#   right:  Battery, Clock
+start  = ["launcher", "network", "bluetooth"]
+center = ["workspaces"]
+end    = ["battery", "clock", "control-center"]
+
+# ── Dock ──────────────────────────────────────────────────────────────────────
+[dock]
+enabled          = true              # v4: dock.enabled = true
+position         = "bottom"          # v4: dock.position = "bottom"
+background_opacity = 1.0             # v4: dock.backgroundOpacity = 1
+auto_hide        = true              # v4: dock.displayMode = "auto_hide"
+show_running     = true
+active_opacity   = 1.0
+inactive_opacity = 0.6               # v4: dock.deadOpacity = 0.6
+pinned           = []                # v4: dock.pinnedApps = []
+
+# ── Desktop Widgets ───────────────────────────────────────────────────────────
+[desktop_widgets]
+enabled = false                      # v4: desktopWidgets.enabled = false
+
+# ── Hooks ─────────────────────────────────────────────────────────────────────
+[hooks]
+battery_low_percent_threshold = 0
