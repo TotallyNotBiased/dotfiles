@@ -26,6 +26,12 @@
     mouse.accelProfile = "flat";
   };
 
+  # hacky bullshit since firefox broke in unstable
+  environment.sessionVariables = {
+    MOZ_USE_XINPUT2 = "1";
+    MOZ_ENABLE_WAYLAND = "0";
+  };
+
   hardware.trackpoint = {
     enable = true;
     sensitivity = 100;
@@ -78,6 +84,7 @@
       xdg-desktop-portal-gtk
       xdg-desktop-portal-gnome
     ];
+    config.common.default = [ "gtk" ];
   };
 
   system.stateVersion = "25.11";
