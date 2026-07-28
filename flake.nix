@@ -5,7 +5,10 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
@@ -61,7 +64,6 @@
         specialArgs = { inherit inputs; unstable = unstableLinux; };
         modules = [
           ./hosts/thinkpad/configuration.nix
-          ./hosts/thinkpad/noctalia.nix
           home-manager.nixosModules.home-manager
           {
             home-manager = {

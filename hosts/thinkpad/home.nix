@@ -16,6 +16,7 @@
     ../../modules/home/fonts.nix
     inputs.nixvim.homeModules.nixvim
     ../../modules/home/nixvim
+    ./noctalia.nix
   ];
 
   home = {
