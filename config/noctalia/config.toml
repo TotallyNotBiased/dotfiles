@@ -4,7 +4,6 @@
 
 # ── Shell ─────────────────────────────────────────────────────────────────────
 [shell]
-ui_scale              = 1.0
 corner_radius_scale   = 0.2          # v4: radiusRatio = 0.2
 font_family           = "sans-serif" # v4: fontDefault = "Sans Serif"
 telemetry_enabled     = false        # v4: telemetryEnabled = false
@@ -46,7 +45,6 @@ directory           = "/home/unbiased/dotfiles/assets/"  # v4: directory
 
 [wallpaper.automation]
 enabled          = false             # v4: automationEnabled = false
-interval_minutes = 5                 # v4: randomIntervalSec = 300 → 5 minutes
 order            = "random"          # v4: wallpaperChangeMode = "random"
 
 [wallpaper.default]
@@ -142,8 +140,6 @@ down     = ["down"]                  # v4: keyDown = ["Down"]
 position           = "top"           # v4: bar.position = "top"
 background_opacity = 1.0             # v4: bar.backgroundOpacity = 1
 radius             = 12              # v4: bar.frameRadius = 12
-margin_h           = 4               # v4: marginHorizontal = 4
-margin_v           = 4               # v4: marginVertical = 4
 widget_spacing     = 4               # v4: widgetSpacing = 4
 scale              = 1.0             # v4: fontScale = 1
 shadow             = true            # v4: enableShadows = true
@@ -174,7 +170,3 @@ reserve_space    = false             # test
 # ── Desktop Widgets ───────────────────────────────────────────────────────────
 [desktop_widgets]
 enabled = false                      # v4: desktopWidgets.enabled = false
-
-# ── Hooks ─────────────────────────────────────────────────────────────────────
-[hooks]
-battery_low_percent_threshold = 0
