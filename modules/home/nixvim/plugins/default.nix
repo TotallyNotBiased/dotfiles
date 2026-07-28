@@ -2,7 +2,6 @@
   imports = [
     ./lsp.nix
     ./cmp.nix
-    ./neo-tree.nix
     ./colorizer.nix
   ];
 
