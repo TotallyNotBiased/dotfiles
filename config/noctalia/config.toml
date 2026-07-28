@@ -9,7 +9,7 @@ corner_radius_scale   = 0.2          # v4: radiusRatio = 0.2
 font_family           = "sans-serif" # v4: fontDefault = "Sans Serif"
 telemetry_enabled     = false        # v4: telemetryEnabled = false
 settings_show_advanced = false
-clipboard_enabled     = false        # v4: enableClipboardHistory = false
+clipboard_enabled     = true # v4: enableClipboardHistory = false
 password_style        = "default"    # v4: passwordChars = false
 
 # v4 avatar: /home/unbiased/.face
@@ -48,6 +48,9 @@ directory           = "/home/unbiased/dotfiles/assets/"  # v4: directory
 enabled          = false             # v4: automationEnabled = false
 interval_minutes = 5                 # v4: randomIntervalSec = 300 → 5 minutes
 order            = "random"          # v4: wallpaperChangeMode = "random"
+
+[wallpaper.default]
+path             = "/home/unbiased/dotfiles/assets/wallpaper.jpg"  # v4: directory
 
 # ── Theme ─────────────────────────────────────────────────────────────────────
 [theme]
@@ -152,9 +155,9 @@ capsule            = false           # v4: showCapsule = false
 #   left:   ControlCenter, Network, Bluetooth
 #   center: Workspace
 #   right:  Battery, Clock
-start  = ["launcher", "network", "bluetooth"]
+start  = ["control-center", "network", "bluetooth"]
 center = ["workspaces"]
-end    = ["battery", "clock", "control-center"]
+end    = ["battery", "clock", "launcher"]
 
 # ── Dock ──────────────────────────────────────────────────────────────────────
 [dock]
@@ -166,6 +169,7 @@ show_running     = true
 active_opacity   = 1.0
 inactive_opacity = 0.6               # v4: dock.deadOpacity = 0.6
 pinned           = []                # v4: dock.pinnedApps = []
+reserve_space    = false             # test
 
 # ── Desktop Widgets ───────────────────────────────────────────────────────────
 [desktop_widgets]
