@@ -3,6 +3,7 @@
 {
   programs.firefox = {
     enable = true;
+    configPath = "${config.xdg.configHome}/mozilla/firefox";
     policies = {
       BlockAboutConfig = true;
       DefaultDownloadDirectory = "${config.home.homeDirectory}/downloads";
