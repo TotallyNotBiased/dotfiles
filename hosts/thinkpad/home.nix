@@ -74,6 +74,7 @@
     download = "${config.home.homeDirectory}/downloads";
     pictures = "${config.home.homeDirectory}/img";
     documents = "${config.home.homeDirectory}/docs";
+    projects = "${config.home.homeDirectory}/projects";
     desktop = "${config.home.homeDirectory}";
     music = "${config.home.homeDirectory}";
     publicShare = "${config.home.homeDirectory}";
