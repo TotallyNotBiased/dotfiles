@@ -17,7 +17,12 @@
 
       highlight = {
         TelescopePromptBorder.link = "TelescopeBorder";
-        TelescopePromptTitle.link = "TelescopeTitle";
+        TelescopePromptNormal.link = "TelescopeNormal";
+        TelescopePromptPrefix.link = "TelescopeNormal";
+        TelescopePromptTitle = {
+          fg = config.theme.colors.red;
+          bold = true;
+        };
       };
 
       colorschemes.base16 = {
