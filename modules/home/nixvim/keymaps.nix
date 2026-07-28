@@ -31,5 +31,10 @@
 		action = "<cmd>Telescope find_files<CR>";
 		options.desc = "Telescope Finder";
       }
+      {
+		key = "<leader>lg";
+		action = "<cmd>Telescope live_grep<CR>";
+		options.desc = "Telescope Live Grep";
+      }
     ];
 }
