@@ -23,6 +23,14 @@
           fg = config.theme.colors.red;
           bold = true;
         };
+        TelescopePreviewTitle = {
+          fg = config.theme.colors.green;
+          bold = true;
+        };
+        TelescopeResultsTitle = {
+          fg = config.theme.colors.cyan;
+          bold = true;
+        };
       };
 
       colorschemes.base16 = {
