@@ -13,6 +13,7 @@
     fastfetch
     gh
     git-filter-repo
+    ripgrep
   ]);
 
   programs.git = {
