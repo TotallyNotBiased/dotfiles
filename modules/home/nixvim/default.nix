@@ -15,6 +15,11 @@
       defaultEditor = true;
       vimAlias = true;
 
+      highlight = {
+        TelescopePromptBorder.link = "TelescopeBorder";
+        TelescopePromptTitle.link = "TelescopeTitle";
+      };
+
       colorschemes.base16 = {
         enable = true;
         colorscheme = {
