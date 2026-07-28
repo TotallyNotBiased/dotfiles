@@ -26,8 +26,8 @@ alpha     = 0.55
 [shell.panel]
 transparency_mode     = "solid"      # v4: panelBackgroundOpacity = 0.93 → close to solid
 borders               = false        # v4: boxBorderEnabled = false
-launcher_placement    = "centered"   # v4: appLauncher.position = "center"
-session_placement     = "centered"   # v4: sessionMenu.position = "center"
+launcher_placement    = "floating"   # v5 valid: "floating" (centered) or "attached"
+session_placement     = "floating"   # v5 valid: "floating" (centered) or "attached"
 control_center_placement = "attached" # v4: controlCenter.position = "close_to_bar_button"
 
 [shell.mpris]
