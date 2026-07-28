@@ -29,6 +29,7 @@
   };
 
   programs.yazi = {
+    shellWrapperName = "yy";
     enable = true;
     enableBashIntegration = true;
     theme = {

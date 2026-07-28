@@ -45,7 +45,7 @@
         uutils-coreutils
       ])
       ++ (with unstable; [
-        antigravity
+        antigravity-ide
         krita
       ]);
   };
@@ -69,6 +69,7 @@
   xdg.userDirs = {
     enable = true;
     createDirectories = true;
+    setSessionVariables = true;
     download = "${config.home.homeDirectory}/downloads";
     pictures = "${config.home.homeDirectory}/img";
     documents = "${config.home.homeDirectory}/docs";
