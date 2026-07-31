@@ -54,9 +54,9 @@
 
       username = {
         show_always = true;
-        style_user = "bg:${config.theme.colors.magenta} fg:${config.theme.colors.base00}";
+        style_user = "bg:${config.theme.colors.blue} fg:${config.theme.colors.base00}";
         style_root = "bg:${config.theme.colors.red} fg:${config.theme.colors.base00}";
-        format = "[ $user ]($style)[](bg:${config.theme.colors.base01} fg:${config.theme.colors.magenta})";
+        format = "[ $user ]($style)[](bg:${config.theme.colors.base01} fg:${config.theme.colors.blue})";
       };
 
       directory = {
@@ -66,12 +66,12 @@
 
       git_branch = {
         symbol = "";
-        style = "fg:${config.theme.colors.magenta}";
+        style = "fg:${config.theme.colors.blue}";
         format = "[ $symbol $branch ]($style)";
       };
 
       git_status = {
-        style = "fg:${config.theme.colors.magenta}";
+        style = "fg:${config.theme.colors.blue}";
         format = "[($all_status$ahead_behind )]($style) ";
       };
 
@@ -128,11 +128,11 @@
 
       set -g status-position bottom
       set -g status-style "bg=${config.theme.colors.base00},fg=${config.theme.colors.base05}"
-      set -g window-status-current-style "bg=${config.theme.colors.magenta},fg=${config.theme.colors.base00},bold"
+      set -g window-status-current-style "bg=${config.theme.colors.blue},fg=${config.theme.colors.base00},bold"
       set -g window-status-style "bg=${config.theme.colors.base01},fg=${config.theme.colors.base05}"
       set -g pane-border-style "fg=${config.theme.colors.base01}"
-      set -g pane-active-border-style "fg=${config.theme.colors.magenta}"
-      set -g message-style "bg=${config.theme.colors.magenta},fg=${config.theme.colors.base00}"
+      set -g pane-active-border-style "fg=${config.theme.colors.blue}"
+      set -g message-style "bg=${config.theme.colors.yellow},fg=${config.theme.colors.base00}"
       
       set -g status-left "#[bg=${config.theme.colors.blue},fg=${config.theme.colors.base00},bold] #S "
       set -g status-right "#[bg=${config.theme.colors.base01},fg=${config.theme.colors.base05}] %H:%M "
