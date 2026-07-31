@@ -11,5 +11,6 @@
     web-devicons.enable = true;
     treesitter.enable = true;
     lsp-lines.enable = true;
+    tmux-navigator.enable = true;
   };
 }
