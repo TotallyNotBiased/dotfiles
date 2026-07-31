@@ -4,7 +4,7 @@
   programs.nixvim.keymaps = [
       # General keymaps
       {
-		key = "<C-j>";
+		key = "<C-;>";
 		action = "i<CR><Esc>";
 		options.desc = "Break line at cursor position in Normal mode";
       }

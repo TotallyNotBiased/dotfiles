@@ -54,7 +54,6 @@
           base0F = "${config.theme.colors.violet}";
         };
       };
-      version.enableNixpkgsReleaseCheck = false;
   };
 }
 
