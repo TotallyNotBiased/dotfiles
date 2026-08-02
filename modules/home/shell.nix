@@ -120,33 +120,47 @@
         '';
       }
     ];
-
     extraConfig = ''
       set -g default-terminal "tmux-256color"
       set -g status-left-length 30
       set -ag terminal-overrides ",xterm-256color:RGB"
-
       set -g status-position bottom
+
+      if -F '#{!=:#{status},2}' {
+        set -Fg 'status-format[1]' '#{status-format[0]}'
+        set -g 'status-format[0]' ' '
+        set -g status 2
+      }
+
+      # flat background, no pills
       set -g status-style "bg=${config.theme.colors.base00},fg=${config.theme.colors.base05}"
-      set -g window-status-current-style "bg=${config.theme.colors.blue},fg=${config.theme.colors.base00},bold"
-      set -g window-status-style "bg=${config.theme.colors.base01},fg=${config.theme.colors.base05}"
+
       set -g pane-border-style "fg=${config.theme.colors.base01}"
       set -g pane-active-border-style "fg=${config.theme.colors.blue}"
-      set -g message-style "bg=${config.theme.colors.yellow},fg=${config.theme.colors.base00}"
-      
-      set -g status-left "#[bg=${config.theme.colors.blue},fg=${config.theme.colors.base00},bold] #S "
-      set -g status-right "#[bg=${config.theme.colors.base01},fg=${config.theme.colors.base05}] %H:%M "
-      set -g window-status-format " #I:#W "
-      set -g window-status-current-format " #I:#W "
+      set -g message-style "fg=${config.theme.colors.yellow},bg=${config.theme.colors.base00}"
+
+      # session name, then a dim pipe separator
+      set -g status-left "#[fg=${config.theme.colors.blue},bold] #S #[fg=${config.theme.colors.base03}]| "
+
+      # dim pipe, then the clock
+      set -g status-right "#[fg=${config.theme.colors.base03}]| #[fg=${config.theme.colors.base05}] %H:%M "
+
+      # inactive windows: dim text, no background
+      set -g window-status-style "fg=${config.theme.colors.base04}"
+      set -g window-status-format "#I:#W"
+
+      # active window: just a bold/bright fg, still no background
+      set -g window-status-current-style "fg=${config.theme.colors.blue},bold"
+      set -g window-status-current-format "#I:#W"
+
+      # pipe between each window entry in the list
+      set -g window-status-separator " #[fg=${config.theme.colors.base03}]| #[fg=${config.theme.colors.base05}]"
 
       bind v split-window -h -c "#{pane_current_path}"
       bind s split-window -v -c "#{pane_current_path}"
-
       bind c new-window -c "#{pane_current_path}"
-
       bind-key j switch-client -n
       bind-key k switch-client -p
-
       # Visual selection and yank like vim in copy mode
       bind-key -T copy-mode-vi v send-keys -X begin-selection
       bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
