@@ -35,6 +35,11 @@
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.open = true;
 
+  systemd.network.links."10-wan" = {
+    matchConfig.PermanentMACAddress = "9c:6b:00:85:16:14";
+    linkConfig.Name = "Ethernet";
+  };
+
   hardware.wooting.enable = true;
 
   hardware.bluetooth.enable = true;
