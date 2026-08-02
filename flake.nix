@@ -59,6 +59,28 @@
       };
     in
     {
+      nixosConfigurations.horizon = nixpkgs.lib.nixosSystem {
+        system = linuxSystem;
+        specialArgs = { inherit inputs; unstable = unstableLinux; };
+        modules = [
+          ./hosts/horizon/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              backupFileExtension = "backup";
+              extraSpecialArgs = { inherit inputs; unstable = unstableLinux; };
+              users.unbiased = {
+                imports = [
+                  ./hosts/horizon/home.nix
+                ];
+              };
+            };
+          }
+        ];
+      };
+
       nixosConfigurations.thinkpad = nixpkgs.lib.nixosSystem {
         system = linuxSystem;
         specialArgs = { inherit inputs; unstable = unstableLinux; };
