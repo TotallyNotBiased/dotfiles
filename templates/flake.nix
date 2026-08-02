@@ -3,27 +3,27 @@
 
   outputs = { self, ... }: {
     templates = {
-      trivial = {
+      default = {
         path = ./default;
         description = "A default template to build on.";
       };
 
-      python-script = {
+      c = {
         path = ./c;
         description = "A simple flake for C/C++ projects with batteries included.";
       };
 
-      python-package = {
+      python = {
         path = ./python;
         description = "A simple Python flake with pip.";
       };
 
-      haskell-simple-app = {
+      rust = {
         path = ./rust;
         description = "A simple Rust flake with full LSP support.";
       };
 
-      haskell-tinker-shell = {
+      rust-vulkan = {
         path = ./rust-vulkan;
         description = "A Rust flake with full Vulkan support.";
       };
