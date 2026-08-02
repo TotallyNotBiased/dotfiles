@@ -13,6 +13,7 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.limine.enable = true;
 
   networking.hostName = "horizon";
   networking.networkmanager.enable = true;
@@ -64,6 +65,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    sbctl
     xwayland-satellite
   ];
 
