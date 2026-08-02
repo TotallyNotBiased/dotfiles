@@ -12,8 +12,20 @@
   ];
 
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.limine.enable = true;
-  boot.loader.limine.secureBoot.enable = true;
+  boot.loader.limine = {
+    enable = true;
+    secureBoot.enable = true;
+    style = {
+      wallpapers = [ "${config.users.users.unbiased.home}/dotfiles/assets/wallpaper.jpg" ];
+      wallpaperStyle = "centered";
+    };
+    extraEntries = ''
+      /:Windows 11
+      protocol: efi
+      path: uuid(1129758d-79ac-4023-b64c-fe5155dd7a49):/EFI/Microsoft/Boot/bootmgfw.efi
+    '';
+  };
+
 
   networking.hostName = "horizon";
   networking.networkmanager.enable = true;
