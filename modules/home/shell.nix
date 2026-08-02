@@ -18,7 +18,7 @@
           echo "Usage: mkflake <template>"
           return 1 
         fi
-        nix flake init -t ~/dotfiles#"$1" && \
+        nix flake init -t ~/dotfiles/templates#"$1" && \
         echo "use flake" > .envrc && \
         direnv allow
       }
