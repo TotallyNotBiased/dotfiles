@@ -50,6 +50,7 @@
     enable = true;
     enableBashIntegration = true;
     settings = {
+      add_newline = true;
       format = "$username$directory$git_branch$git_status$nix_shell$character";
 
       username = {
@@ -83,8 +84,8 @@
       };
 
       character = {
-        success_symbol = " [➜](bold green)";
-        error_symbol = " [➜](bold red)";
+        success_symbol = "\n[➜](bold green)";
+        error_symbol = "\n[➜](bold red)";
       };
     };
   };
@@ -125,12 +126,6 @@
       set -g status-left-length 30
       set -ag terminal-overrides ",xterm-256color:RGB"
       set -g status-position bottom
-
-      if -F '#{!=:#{status},2}' {
-        set -Fg 'status-format[1]' '#{status-format[0]}'
-        set -g 'status-format[0]' ' '
-        set -g status 2
-      }
 
       # flat background, no pills
       set -g status-style "bg=${config.theme.colors.base00},fg=${config.theme.colors.base05}"
