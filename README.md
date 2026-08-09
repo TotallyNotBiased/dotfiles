@@ -4,15 +4,20 @@ A unified Nix config merged from my ThinkPad and WSL configurations. Hosts inclu
 
 ## Installation
 
-Clone this repository into your home directory:
+Clone this repository into the home directory:
 
 ```bash
 git clone git@github.com:TotallyNotBiased/dotfiles.git ~/dotfiles 
 ```
 
+### Desktop (NixOS)
+```bash
+sudo nixos-rebuild switch --flake ~/dotfiles#horizon
+```
+
 ### ThinkPad (NixOS)
 ```bash
-sudo nixos-rebuild switch --flake ~/dotfiles#nixos
+sudo nixos-rebuild switch --flake ~/dotfiles#thinkpad
 ```
 Note that if you are trying this out on your own machine, use your own `hardware-configuration.nix`.
 
