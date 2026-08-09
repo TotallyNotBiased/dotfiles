@@ -12,7 +12,7 @@ if [ -f "$PIDFILE" ]; then
     rm -f "$PIDFILE"
     notify-send "gpu-screen-recorder" "Stopped. Converting to gif..."
 
-    LATEST=$(ls -t "$HOME"/Videos/gsr-*.mp4 | head -n1)
+    LATEST=$(ls -t "$HOME"/videos/gsr-*.mp4 | head -n1)
     GIFOUT="${LATEST%.mp4}.gif"
 
     ffmpeg -y -i "$LATEST" -vf "fps=15,scale=960:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" "$GIFOUT"
@@ -31,5 +31,4 @@ else
 
     gpu-screen-recorder -w "${W}x${H}+$X+$Y" -f 60 -a default_output -o "$OUT.mp4" &
     echo $! > "$PIDFILE"
-    notify-send "gpu-screen-recorder" "Recording region..."
 fi
