@@ -68,6 +68,8 @@
 
   programs.niri.enable = true;
 
+  programs.gpu-screen-recorder.enable = true;
+
   users.users.unbiased = {
     isNormalUser = true;
     description = "unbiased";

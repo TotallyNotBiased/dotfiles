@@ -47,7 +47,7 @@
         uutils-coreutils
         slurp
         ffmpeg
-        gpu-screen-recorder
+        libnotify
       ])
       ++ (with unstable; [
         antigravity-ide
