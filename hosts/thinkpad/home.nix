@@ -45,6 +45,9 @@
         gsettings-desktop-schemas
         tree
         uutils-coreutils
+        slurp
+        ffmpeg
+        libnotify
       ])
       ++ (with unstable; [
         antigravity-ide
