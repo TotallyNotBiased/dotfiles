@@ -12,6 +12,7 @@
   ];
 
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.timeout = 10;
   boot.loader.limine = {
     enable = true;
     secureBoot.enable = true;
