@@ -45,6 +45,9 @@
         gsettings-desktop-schemas
         tree
         uutils-coreutils
+        slurp
+        ffmpeg
+        gpu-screen-recorder
       ])
       ++ (with unstable; [
         antigravity-ide
