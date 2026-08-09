@@ -23,8 +23,8 @@
       # Plugin keymaps
       {
 		key = "<leader>e";
-		action = "<cmd>Neotree toggle<CR>";
-		options.desc = "Toggle Explorer";
+		action = "vim.diagnostic.open_float";
+		options.desc = "Open diagnostic float";
       }
       {
 		key = "<leader>ff";
