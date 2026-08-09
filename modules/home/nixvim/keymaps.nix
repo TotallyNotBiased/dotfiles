@@ -9,7 +9,7 @@
 		options.desc = "Break line at cursor position in Normal mode";
       }
       {
-      mode = "n";
+                mode = "n";
 		key = "<C-s>";
 		action = "<cmd>w<CR>";
                 options.desc = "Save while in Normal mode";
@@ -22,8 +22,9 @@
       }
       # Plugin keymaps
       {
+                mode = "n";
 		key = "<leader>e";
-		action = "vim.diagnostic.open_float";
+		action = "<cmd>vim.diagnostic.open_float()<CR>";
 		options.desc = "Open diagnostic float";
       }
       {
