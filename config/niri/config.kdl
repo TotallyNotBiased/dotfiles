@@ -381,13 +381,14 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Q hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+Space hotkey-overlay-title="Run an Application: noctalia-launcher" repeat=false { spawn-sh "noctalia msg panel-toggle launcher"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Mod+Print hotkey-overlay-title="Record a GIF: gpu-screen-recorder" repeat=false { spawn-sh "~/dotfiles/config/screen2gif.sh"; }
+    // Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
-    Super+V hotkey-overlay-title="Clipboard History: fuzzel" { spawn-sh "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
+    // Super+V hotkey-overlay-title="Clipboard History: fuzzel" { spawn-sh "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
     // For example, this is a standard bind to toggle the screen reader (orca).
-    Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
+    // Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.

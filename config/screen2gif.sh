@@ -4,7 +4,7 @@
 # second press: stop + convert to gif
 
 PIDFILE="/tmp/gsr-region.pid"
-OUT="$HOME/Videos/gsr-$(date +%Y%m%d-%H%M%S)"
+OUT="$HOME/videos/gsr-$(date +%Y%m%d-%H%M%S)"
 
 if [ -f "$PIDFILE" ]; then
     # Stop recording
