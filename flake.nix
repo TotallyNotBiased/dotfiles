@@ -1,5 +1,5 @@
 {
-  description = "unified nix config for thinkpad and wsl";
+  description = "unbiased's unified nix config";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
