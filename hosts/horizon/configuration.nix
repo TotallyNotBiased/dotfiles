@@ -5,6 +5,20 @@
   ...
 }:
 
+let 
+  westonGreeterCfg = pkgs.writeText "weston-sddm.ini" ''
+    [core]
+    xwayland=true
+
+    [output]
+    name=HDMI-A-2
+    mode=off
+
+    [output]
+    name=DP-4
+    mode=1920x1080
+  '';
+in
 {
   imports = [
     ./hardware-configuration.nix
@@ -43,6 +57,15 @@
   environment.sessionVariables = {
     MOZ_USE_XINPUT2 = "1";
     MOZ_ENABLE_WAYLAND = "0";
+  };
+
+  # more hacks for sddm to work properly on multimonitor setup
+  services.displayManager.sddm = {
+    wayland = {
+      compositor = "weston";
+    };
+    settings.Wayland.CompositorCommand =
+      "${pkgs.weston}/bin/weston --shell=kiosk -c ${westonGreeterCfg}";
   };
 
   hardware.graphics.enable = true;
