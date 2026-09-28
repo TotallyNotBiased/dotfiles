@@ -39,6 +39,9 @@ in
       protocol: efi
       path: uuid(1129758d-79ac-4023-b64c-fe5155dd7a49):/EFI/Microsoft/Boot/bootmgfw.efi
     '';
+    extraConfig = ''
+      remember_last_entry: yes 
+    '';
   };
 
 
