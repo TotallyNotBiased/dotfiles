@@ -7,7 +7,7 @@
 
   programs.noctalia = {
     enable = true;
-    validateConfig = false;
+    checkConfig = false;
   };
 
   xdg.configFile."noctalia/config.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/noctalia/config.toml";
